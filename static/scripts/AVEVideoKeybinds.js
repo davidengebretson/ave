@@ -1,4 +1,4 @@
-//these global vars are pulled out incase we want to implement custom user keybinds
+//these global vars are pulled out in case we want to implement custom user keybinds
 //change as desired. empty string is equivalent to Mousetrap.unbind() as it will just bind nothing.
 var ISMOUSETRAP = true;
 //video actions
