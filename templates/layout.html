@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>{% block title %}{% endblock %} &#8211; Accessible Video Editor</title>
+    <title>{% block title %}{% endblock %} | Accessible Video Editor</title>
     <!-- Styles -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')  }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/menubarAction.css')  }}">
@@ -16,18 +16,18 @@
     <div id="wrapper">
         <a class="screen-reader-text skip-link" href="#content">Skip to Content</a>
         <header>
-            <nav aria-label="Primary" class="menu">
+            <nav aria-label="Main" class="menu">
                 <ul>
                     <!-- {% block link1 %}{% endblock %} -->
                     <li><a class="menu-link" href="{% block link1href %}{% endblock %}">{% block link1text %}{% endblock
                             %}</a></li>
-                    <li><a class="menu-link" href="https://github.com/sjdobesh/ave">GitHub</a></li>
+                    <li><a class="menu-link" href="https://github.com/davidengebretson/ave">GitHub</a></li>
                 </ul>
-                <hr aria-hidden="true">
+                <hr role="presentation">
             </nav>
 
             <div class="two-col">
-                <nav class="has-border" aria-labelledby="a11y-options">
+                <nav class="has-border" aria-labelledby="Accessibility Options">
                     <h2 id="a11y-options">Accessibility Options</h2>
                     <form onsubmit="return updateDisplay();" name="a11y-form" method="POST" class="two-col-80-20">
                         <div>
@@ -58,7 +58,7 @@
                             <input type="submit" value="Update Page" class="large-button">
                         </span>
                     </form>
-                    <hr aria-hidden="true" class="small-screen">
+                    <hr role="presentation" class="small-screen">
                 </nav>
                 <div class="has-border" role="{% block box1role %}{% endblock %}" {% block box1attributes
                     %}{% endblock %}>
@@ -66,7 +66,7 @@
                     {% block box1content%}{% endblock %}
                 </div>
             </div>
-            <hr aria-hidden="true">
+            <hr role="presentation">
         </header>
 
         <main id="content">
@@ -75,8 +75,8 @@
             {% endblock %}
         </main>
         <footer>
-            <hr aria-hidden="true">
-            <p><a href="https://github.com/sjdobesh/ave/blob/master/LICENSE">Copyright &copy; DAVidE Team</a></p>
+            <hr role="presentation">
+            <p><a href="https://github.com/davidengebretson/ave/blob/main/LICENSE">Copyright &copy; DAVidE Team</a></p>
         </footer>
 </body>
 
