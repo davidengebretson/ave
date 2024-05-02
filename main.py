@@ -29,12 +29,12 @@ def upload():
             video = request.files['video']
             videoname = secure_filename(video.filename)
             videos.save(video)
-            flash("Video " + videoname + " uploaded successfully.")
+            flash(strftime("%H:%M:%S") + "Video " + videoname + " uploaded successfully.")
             return render_template('index.html', uploaded_video=escape(videoname))
         except:
-            flash("Incorrect file type. Please upload an MP4 file.")
+            flash(strftime("%H:%M:%S") + "Incorrect file type. Please upload an MP4 file.")
             return render_template('index.html')
-    flash("Please upload an MP4 file to get started.")
+    flash(strftime("%H:%M:%S") + "Please upload an MP4 file to get started.")
     return render_template('index.html')
 
 
@@ -64,7 +64,7 @@ def trim(filename):
     video_clip = video_clip.subclip(start, stop)
     video_clip.write_videofile(path_filename)  # defaults to rewriting the file
     video_clip.close()
-    flash("Video trimmed to selection")
+    flash(strftime("%H:%M:%S") + "Video trimmed to selection")
     return render_template('index.html', uploaded_video=escape(filename))
 
 
@@ -82,5 +82,5 @@ def delete(filename):
     video_clip = video_clip.set_end(stop)
     video_clip.write_videofile(path_filename)  # defaults to rewriting the file
     video_clip.close()
-    flash("Selection deleted from video")
+    flash(strftime("%H:%M:%S") + "Selection deleted from video")
     return render_template('index.html', uploaded_video=escape(filename))
