@@ -20,17 +20,17 @@ Setting an alert role didn't seem to help; should the alerts go at the top of th
 {% block box1role %}alert{% endblock %}
 {% block box1h2 %}Alerts{% endblock %}
 {% block box1content %}
-{% with messages = get_flashed_messages() %}
-{% if messages %}
+<!-- {% with messages = get_flashed_messages() %} -->
+{% if session['messages'] %}
 <ul class="flashes">
-    {% for message in messages %}
+    {% for message in session['messages'] %}
     <li>{{ message }}</li>
     {% endfor %}
 </ul>
 {% else %}
 <p>There are no alerts to display.</p>
 {% endif %}
-{% endwith %}
+<!-- {% endwith %} -->
 {% endblock %}
 
 
