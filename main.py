@@ -93,6 +93,3 @@ def add_message(new_message):
     session['messages'] = messages
 
     return "Message added to session."
-
-
-#session.setdefault('messages', []).append(strftime("%H:%M:%S") + " Selection deleted from video")
