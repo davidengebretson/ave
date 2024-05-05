@@ -13,26 +13,33 @@
 </head>
 
 <body>
+    <wwu-pre-header></wwu-pre-header>
+    <wwu-header sitename='Accessibility Video Editor'></wwu-header>
+    <wwu-main-nav>
+        <a href="/">Editor</a>
+        <a href="/about">About</a>
+        <a href="https://github.com/wwu-webtech/ave">GitHub</a>
+    </wwu-main-nav>
     <div id="wrapper">
         <a class="screen-reader-text skip-link" href="#content">Skip to Content</a>
         <header>
-            <nav aria-label="Main" class="menu">
+            <!-- <nav aria-label="Main" class="menu">
                 <ul>
-                    <!-- {% block link1 %}{% endblock %} -->
                     <li><a class="menu-link" href="{% block link1href %}{% endblock %}">{% block link1text %}{% endblock
                             %}</a></li>
                     <li><a class="menu-link" href="https://github.com/wwu-webtech/ave">GitHub</a></li>
                 </ul>
                 <hr role="presentation">
-            </nav>
-
+            </nav> -->
+            <br>
             <div class="two-col">
                 <nav class="has-border" aria-label="Accessibility Options">
                     <h2 id="a11y-options" class="visually-hidden">Accessibility Options</h2>
                     <form onsubmit="return updateDisplay();" name="a11y-form" method="POST" class="two-col-80-20">
                         <div>
                             <span class="display-block">
-                                <input type="checkbox" id="shortcuts" name="shortcuts" value="shortcuts" checked {% block box2keyboardshortcuts %}{% endblock %}>
+                                <input type="checkbox" id="shortcuts" name="shortcuts" value="shortcuts" checked {%
+                                    block box2keyboardshortcuts %}{% endblock %}>
                                 <label for="shortcuts"> Keyboard shortcuts</label>
                             </span>
                             <span class="display-block">
@@ -60,8 +67,8 @@
                     </form>
                     <hr role="presentation" class="small-screen">
                 </nav>
-                <div class="has-border" role="{% block box1role %}{% endblock %}" {% block box1attributes
-                    %}{% endblock %}>
+                <div class="has-border" role="{% block box1role %}{% endblock %}" {% block box1attributes %}{% endblock
+                    %}>
                     <h2 {% block box1h2attributes %}{% endblock %}>{% block box1h2 %}{% endblock %}</h2>
                     {% block box1content%}{% endblock %}
                 </div>
@@ -94,10 +101,27 @@
             {% block main %}
             {% endblock %}
         </main>
-        <footer>
-            <hr role="presentation">
-            <p><a href="https://github.com/wwu-webtech/ave/blob/main/LICENSE">Copyright &copy; DAVidE Team</a></p>
-        </footer>
+    </div>
+    <footer>
+        <!-- <hr role="presentation">
+            <p><a href="https://github.com/wwu-webtech/ave/blob/main/LICENSE">Copyright &copy; DAVidE Team 2024</a></p> -->
+        <section class="site-footer" aria-label="Descriptive Alt Text Generator Footer">
+            <div class="footer-region">
+                <div class="region region--foter_left"></div>
+            </div>
+        </section>
+
+        <wwu-footer></wwu-footer>
+    </footer>
+    <script src="https://ashlar.blob.core.windows.net/ashlar-theme-files/js/search.js"></script>
+    <script src="https://ashlar.blob.core.windows.net/ashlar-theme-files/js/pre-header.js"></script>
+    <script src="https://ashlar.blob.core.windows.net/ashlar-theme-files/js/logo.js"></script>
+    <script src="https://ashlar.blob.core.windows.net/ashlar-theme-files/js/wwu-header.js"></script>
+    <script src="https://ashlar.blob.core.windows.net/ashlar-theme-files/js/accessible-mega-menu.js"></script>
+    <script src="https://ashlar.blob.core.windows.net/ashlar-theme-files/js/menu-extras.js"></script>
+    <script src="https://ashlar.blob.core.windows.net/ashlar-theme-files/js/main-navigation.js"></script>
+    <script src="https://ashlar.blob.core.windows.net/ashlar-theme-files/js/social-media-icons.js"></script>
+    <script src="https://ashlar.blob.core.windows.net/ashlar-theme-files/js/wwu-footer.js"></script>
 </body>
 
 </html>
