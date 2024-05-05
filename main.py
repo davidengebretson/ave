@@ -1,8 +1,9 @@
 import os
-from flask import Flask, flash, render_template, request, send_file, send_from_directory, url_for
+from flask import Flask, flash, render_template, request, send_file, send_from_directory, url_for, session
 from flask_uploads import UploadSet, configure_uploads
 from werkzeug.utils import redirect, secure_filename
 from markupsafe import escape
+from time import strftime
 
 # we need to find ffmpeg before we can import moviepy
 import os
@@ -29,12 +30,12 @@ def upload():
             video = request.files['video']
             videoname = secure_filename(video.filename)
             videos.save(video)
-            flash("Video " + videoname + " uploaded successfully.")
+            add_message(strftime("%H:%M:%S") + " Video " + videoname + " uploaded successfully.")
             return render_template('index.html', uploaded_video=escape(videoname))
         except:
-            flash("Incorrect file type. Please upload an MP4 file.")
+            add_message(strftime("%H:%M:%S") + " Incorrect file type. Please upload an MP4 file.")
             return render_template('index.html')
-    flash("Please upload an MP4 file to get started.")
+    add_message(strftime("%H:%M:%S") + " Please upload an MP4 file to get started.")
     return render_template('index.html')
 
 
@@ -64,7 +65,7 @@ def trim(filename):
     video_clip = video_clip.subclip(start, stop)
     video_clip.write_videofile(path_filename)  # defaults to rewriting the file
     video_clip.close()
-    flash("Video trimmed to selection")
+    add_message(strftime("%H:%M:%S") + " Video trimmed to selection")
     return render_template('index.html', uploaded_video=escape(filename))
 
 
@@ -82,5 +83,13 @@ def delete(filename):
     video_clip = video_clip.set_end(stop)
     video_clip.write_videofile(path_filename)  # defaults to rewriting the file
     video_clip.close()
-    flash("Selection deleted from video")
+    add_message(strftime("%H:%M:%S") + " Selection deleted from video")
     return render_template('index.html', uploaded_video=escape(filename))
+
+@app.route('/add_message')
+def add_message(new_message):
+    messages = session.get('messages', [])
+    messages.append(new_message)
+    session['messages'] = messages
+
+    return "Message added to session."
