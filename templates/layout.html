@@ -34,7 +34,7 @@
             <br>
             <div class="two-col">
                 <nav class="has-border" aria-label="Accessibility Options">
-                    <h2 id="a11y-options" class="" visually-hidden">Accessibility Options</h2>
+                    <h2 id="a11y-options" class="visually-hidden">Accessibility Options</h2>
                     <form onsubmit="return updateDisplay();" name="a11y-form" method="POST" class="two-col-80-20">
                         <div>
                             <span class="display-block">
@@ -72,6 +72,26 @@
                     <h2 {% block box1h2attributes %}{% endblock %}>{% block box1h2 %}{% endblock %}</h2>
                     {% block box1content%}{% endblock %}
                 </div>
+            </div>
+            <div>
+                <nav class="has-border" aria-label="Introduction">
+                    <h2 id="intro" class="visually-hidden">Introduction</h2>
+                    <p>Welcome to AVE. This accessible open-source webapp is perfect for making simple edits to your videos.</p>
+                    <p>It currently features trimming out and isolating clips from a single MP4 video file.</p>
+                    <p>Here are some tips and instructions to get started:</p>
+                    <li>Video files must be of type MP4</li>
+                    <li>Navigate to Upload Video and press the 'choose file' button to select the MP4 video you wish to edit</li>
+                    <li>To start editing your video, press the 'Upload Video' button below</li>
+                    <li>Once loaded, you may set markers, Mark1 and Mark2, to isolate parts of your video</li>
+                    <li>After making your selection, you may choose to trim the video to the selected clip or delete the clip from the video</li>
+                    <li>Multiple edits may be made to a single video</li>
+                    <li>When you are done, select the download button to download a copy of your finished video</li>
+                    <li>The alerts box will provide feedback on your current actions and hints on what to do next</li>
+                </nav>
+                
+                <span class="display-block">
+                    
+                </span>
             </div>
             <hr role="presentation">
         </header>
