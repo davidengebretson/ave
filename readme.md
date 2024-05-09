@@ -24,6 +24,14 @@ CSCI 497T with Professor Elglaly
 
 ## R1 Contributions
 - Thai Nguyen
+    - Styling
+        - Incorporated Ashlar components and theme into the application to make it look and feel more like a Western page.
+        - The Ashlar pre-header now handles the theme change and font change.
+    - Timeline
+        - Adjusted timeline to be more spaced out and distinct from the progress bar.
+        - Added accessible labels to the current time, marker 1, and marker 2 text and made them tabbable.
+    - Navigation
+        - Reformatted the navigation to be consistent across all pages to comply with WCAG 2.1 criterion 3.2.3
 - Alex Kefer
 - Charles Mikkelborg
     - Alerts
