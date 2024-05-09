@@ -14,6 +14,10 @@ CSCI 497T with Professor Elglaly
 - Nick Harang
 - Kale Kurtzhall
 
+#### Team Members (Spring 2024)
+- Alex Kefer
+- Charles Mikkelborg
+- Thai Nguyen
 
 ## Installation Info
 ### Dependencies
