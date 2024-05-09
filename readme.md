@@ -1,19 +1,46 @@
 # Accessible Video Editor
 ## Jump to
 * [Project Info](#project-info "Goto project-info")
+* [R1 Contributions](#r1-contributions "Goto r1-contributions")
 * [Installation Info](#installation-info "Goto installation-info")
+* [UI Documentation](#ui-documentation "Goto ui-documentation")
 
 ## Project Info
 ### Course and Team
 #### Course
 CSCI 497T with Professor Elglaly
-#### Team Members
+
+#### Team Members Spring 2024
+- Thai Nguyen
+- Alex Kefer
+- Charles Mikkelborg
+
+#### Previous Team Members
 - Robin Balatbat
 - Ian Cullum
 - Sam Dobesh
 - Nick Harang
 - Kale Kurtzhall
 
+## R1 Contributions
+- Thai Nguyen
+    - Styling
+        - Incorporated Ashlar components and theme into the application to make it look and feel more like a Western page.
+        - The Ashlar pre-header now handles the theme change and font change.
+    - Timeline
+        - Adjusted timeline to be more spaced out and distinct from the progress bar.
+        - Added accessible labels to the current time, marker 1, and marker 2 text and made them tabbable.
+    - Navigation
+        - Reformatted the navigation to be consistent across all pages to comply with WCAG 2.1 criterion 3.2.3
+- Alex Kefer
+- Charles Mikkelborg
+    - Alerts
+        - Added Timestamps to alert messages that display HH:MM:SS that an alert was posted.
+        - A bulleted history of alerts displays instead of only a single alert message at a time. This list grows as more messages are added.
+        - The session's alert history may now also be downloaded using the download history button, which downloads a text file with each message on it's own line.
+    - Introduction
+        - An introduction has now been added that provides helpful instructions to navigate and use the app.
+    - Helped put together UI documentation
 
 ## Installation Info
 ### Dependencies
@@ -94,3 +121,21 @@ If your terminal scripting language is not supported you can do the following.
 Create two environment variables, `FLASK_ENV` and `FLASK_APP`.
 Set `FLASK_ENV` to `development` and `FLASK_APP` to `main`. 
 Then start the website locally with `flask run`.
+
+## UI Documentation
+
+### Landing
+ID: ave_landing
+![alt text](static/images/aveLanding.jpg)
+
+### About
+ID: ave_about
+![alt text](static/images/aveAbout.jpeg)
+
+### Upload
+ID: ave_upload
+![alt text](static/images/aveUpload.jpeg)
+
+### Editor
+ID: ave_editor
+![alt text](static/images/AveEditor.jpeg)
