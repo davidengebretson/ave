@@ -12,3 +12,4 @@ env/
 *.mov
 *.mvk
 /.idea
+messageHistory.txt

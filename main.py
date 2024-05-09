@@ -4,7 +4,7 @@ from flask_uploads import UploadSet, configure_uploads
 from werkzeug.utils import redirect, secure_filename
 from markupsafe import escape
 from time import strftime
-
+import io
 # we need to find ffmpeg before we can import moviepy
 import os
 # point to ffmpeg with environment variable
@@ -93,3 +93,16 @@ def add_message(new_message):
     session['messages'] = messages
 
     return "Message added to session."
+
+@app.route('/get_messages', methods=['POST'])
+def download_history():
+    messages = session.get('messages', [])
+    stringify = ""
+    for message in messages:
+        stringify = stringify + message + "\n"
+    
+    path_filename = app.config['UPLOADED_VIDEOS_DEST'] + '/' + "messageHistory.txt"
+    with open(path_filename, "w") as file:
+        file.write(stringify)
+
+    return send_file(path_filename, as_attachment=True)

@@ -30,9 +30,11 @@ Setting an alert role didn't seem to help; should the alerts go at the top of th
     {% else %}
     <p>There are no alerts to display.</p>
     {% endif %}
+    <form method="POST" action="{{ url_for('download_history') }}">
+      <button id="download" class="large-button">Download History</button>
+    </form>
 </div>
 {% endblock %}
-
 
 {% block main %}
 <div>
