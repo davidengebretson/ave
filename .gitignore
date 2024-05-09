@@ -12,3 +12,5 @@ env/
 *.mov
 *.mvk
 /.idea
+/node_modules
+package-lock.json
