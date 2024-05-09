@@ -67,7 +67,7 @@
                 <hr role="presentation" class="small-screen">
             </nav>
         </div>-->
-        <div>
+        <!-- <div>
             <h1>Accessible Video Editor</h1>
             <nav class="has-border" aria-label="Introduction">
                 <h2 id="intro" class="visually-hidden">Introduction</h2>
@@ -92,9 +92,11 @@
             <span class="display-block">
 
                 </span>
-        </div>
+        </div> -->
         <hr role="presentation">
     </header>
+    {% block intro %}
+    {% endblock %}
     <h1 class="video-title">{% block h1 %}{% endblock %}</h1>
 
     <div class="two-col-80-20">
