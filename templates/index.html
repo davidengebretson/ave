@@ -22,16 +22,19 @@ Setting an alert role didn't seem to help; should the alerts go at the top of th
 {% block box1content %}
 <div class="history-block">
     {% if session['messages'] %}
-    <ul class="flashes">
-        {% for message in session['messages'] %}
-        <li>{{ message }}</li>
+    <table class="flashes">
+        {% for message in session['messages'][::-1] %}
+        <tr>
+            <td>{{ message[0] }}</td>
+            <td>{{ message[1] }}</td>
+        </tr>
         {% endfor %}
-    </ul>
+    </table>
     {% else %}
     <p>There are no alerts to display.</p>
     {% endif %}
     <form method="POST" action="{{ url_for('download_history') }}">
-      <button id="download" class="large-button">Download History</button>
+        <button id="download" class="large-button">Download History</button>
     </form>
 </div>
 {% endblock %}
@@ -85,14 +88,14 @@ Setting an alert role didn't seem to help; should the alerts go at the top of th
             <!-- Aria-label for accessibility -->
             <span aria-label="Video progress" tabindex="0">
                 <time id="time-elapsed">00:00.00</time> / 
-                <time id="duration" >00:00.00</time>
+                <time id="duration">00:00.00</time>
             </span>
-            
+
             <!-- Displays marks -->
             <span class="mark" tabindex="0">Mark 1: <time id="mark1">00:00.00</time></span>
             <span class="mark" tabindex="0">Mark 2: <time id="mark2">00:00.00</time></span>
         </div>
-        
+
 
         <nav aria-label="Play Head">
             <ul class="inline">
