@@ -7,13 +7,15 @@ from time import strftime
 import io
 # we need to find ffmpeg before we can import moviepy
 import os
+
 # point to ffmpeg with environment variable
 print('OS Detected: ', os.name)
 if os.name == 'posix':
     os.environ["IMAGEIO_FFMPEG_EXE"] = '/usr/bin/ffmpeg'
 # elsif os.name == 'nt' # windows equivalent.
-from moviepy.editor import * # TODO remove star import when we know the specific modules we need.
-# from moviepy import VideoFileClip 
+from moviepy.editor import *  # TODO remove star import when we know the specific modules we need.
+
+# from moviepy import VideoFileClip
 
 app = Flask(__name__)
 extensions = ('mp4')  # restricting to mp4 for now. If updating this, also update HTML
@@ -30,12 +32,12 @@ def upload():
             video = request.files['video']
             videoname = secure_filename(video.filename)
             videos.save(video)
-            add_message(strftime("%H:%M:%S") + " Video " + videoname + " uploaded successfully.")
+            add_message([strftime("%H:%M:%S"), " Video " + videoname + " uploaded successfully."])
             return render_template('index.html', uploaded_video=escape(videoname))
         except:
-            add_message(strftime("%H:%M:%S") + " Incorrect file type. Please upload an MP4 file.")
+            add_message([strftime("%H:%M:%S"), " Incorrect file type. Please upload an MP4 file."])
             return render_template('index.html')
-    add_message(strftime("%H:%M:%S") + " Please upload an MP4 file to get started.")
+    add_message([strftime("%H:%M:%S"), " Please upload an MP4 file to get started."])
     return render_template('index.html')
 
 
@@ -54,6 +56,11 @@ def about():
     return render_template('about.html')
 
 
+@app.route('/settings')
+def settings():
+    return render_template('settings.html')
+
+
 # take in two markers and the filename to edit
 # trims video to between start and stop.
 @app.route('/trim/<filename>', methods=['POST'])
@@ -65,7 +72,7 @@ def trim(filename):
     video_clip = video_clip.subclip(start, stop)
     video_clip.write_videofile(path_filename)  # defaults to rewriting the file
     video_clip.close()
-    add_message(strftime("%H:%M:%S") + " Video trimmed to selection")
+    add_message([strftime("%H:%M:%S"), " Video trimmed to selection", ])
     return render_template('index.html', uploaded_video=escape(filename))
 
 
@@ -83,8 +90,9 @@ def delete(filename):
     video_clip = video_clip.set_end(stop)
     video_clip.write_videofile(path_filename)  # defaults to rewriting the file
     video_clip.close()
-    add_message(strftime("%H:%M:%S") + " Selection deleted from video")
+    add_message([strftime("%H:%M:%S"), " Selection deleted from video"])
     return render_template('index.html', uploaded_video=escape(filename))
+
 
 @app.route('/add_message')
 def add_message(new_message):
@@ -94,13 +102,14 @@ def add_message(new_message):
 
     return "Message added to session."
 
+
 @app.route('/get_messages', methods=['POST'])
 def download_history():
     messages = session.get('messages', [])
     stringify = ""
     for message in messages:
         stringify = stringify + message + "\n"
-    
+
     path_filename = app.config['UPLOADED_VIDEOS_DEST'] + '/' + "messageHistory.txt"
     with open(path_filename, "w") as file:
         file.write(stringify)
