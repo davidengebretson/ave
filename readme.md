@@ -150,9 +150,16 @@ ID: ave_about
 ![alt text](static/images/aveAbout.jpeg)
 
 ### Upload
-ID: ave_upload
+ID: ave_upload<br />
+The system feature that this screenshot represents is the Upload Video feature. 
+The input field has a form label associated with it complying with WCAG success criteria 2.4.6. The upload button is initially disabled and will remain so if there is no file inputted. After a file is inputted, the upload button will be able to be interacted with and when clicked will trigger the upload process. The button complies with WCAG success criteria 2.5.3 and conform for the color contrast ratio of 4.5 to 1.
 ![alt text](static/images/aveUpload.jpeg)
 
 ### Editor
-ID: ave_editor
+ID: ave_editor<br />
+The system feature that this screenshot represents is the Editor Tools, Alerts, and Movie Player feature. 
+We designed the editor to be keyboard accessible which means the entire interface can be navigated and interacted with using only the keyboard.
+The interface is also screen reader accessible which makes it usable for people who are blind or visual impaired. The UI uses simple and clear language that is easy to understand.
+It also uses a high contrast color scheme and easy of read fonts that can be customized to fit the user's needs. The alerts box to the right of the screen keeps track of user and system actions and has a time attached to each action to provide an accurate timeline of user activity. This log can be downloaded as well. 
+Within the editor tools, the user has access to 5 rows of controls and information. The first being an input field that dictates the current position of the video. The input field has aria labels attached to it make it accessible to screen readers complying with WCAG success criteria 3.3.2. The second row has tabbable information such as the current of the input field in comparison to the full length of the video, marker 1's position, and marker 2's position. Row 3 has the aria label of 'Play Head' as it is contains the controls for the video player. From left of right, the buttons are Play, rewind 10 seconds, rewind 1 second, forward 1 second, and forward 10 second. All these controls comply with WCAG success criteria 2.5.3. The fourth row contains buttons that facilitate editing the video. There are 5 buttons in this row with 3 being initially disabled to prevent errors. The first two buttons allow the user to place markers 1 and 2 which are times in the video that the users wants to edit. Above marker 1 and 2 being placed, the remaining 3 buttons will then be usable. The 'Play Selection' button will play the video from marker 1 to marker 2, the 'Trim to Selection' button will remove any parts of the video not with the times of marker 1 and 2. The last button 'Delete Selection' will remove any parts of the video within the times of marker 1 and 2. The last row only has one button that will download the editted video to the user's downloads folder. Like in row 3, all the buttons in row 4 and 5 comply with WCAG success criteria 2.5.3 and each row has aria labels associated it them. The alerts contains a table that contained the time an action occurred and the action itself.
 ![alt text](static/images/AveEditor.jpeg)
