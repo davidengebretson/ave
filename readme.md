@@ -6,6 +6,7 @@
 * [UI Documentation](#ui-documentation "Goto ui-documentation")
 
 ## Project Info
+This project is ongoing from previous quarters. As a result our github classroom space is not the repository where our work is done, but rather where we have uploaded snapshots for each assignment requirement. If you would like to navigate to the main repository [click here](https://github.com/wwu-webtech/ave "goto github.com/wwu-webtech/ave").
 ### Course and Team
 #### Course
 CSCI 497T with Professor Elglaly
@@ -21,6 +22,22 @@ CSCI 497T with Professor Elglaly
 - Sam Dobesh
 - Nick Harang
 - Kale Kurtzhall
+
+## Features
+### New Additions
+#### Styling
+One of the largest feature changes for this project was to polish the look and feel of the app by incorporating Ashlar components and theme into the application so that it is in line with the look and feel of a Western webpage. This redesign is one of our primary requirements in order to bring it to a deployable state. The Ashlar components also feature a pre-header section that handles theme and font setting preferences that make the original app's accessibility section redundant and so they have been removed. Keyboard shortcuts are now always on by default in lieu of their section's removal.
+#### Navigation
+Navigation has been redesigned so it is consistant accross all pages and all pages share the same theme, Western's website theme, as to comply with WCAG 2.1 criterion 3.2.3 and guidline 3.2 in general. The timeline and mark info display has also been adjusted to allow for tabbing between the different items instead of all items being treated as a single element. This adds additional accessibility support for those navigating by keyboard.
+#### Alerts
+The Alerts window originally appeared above and to the right of a shortcuts menu which has since been removed and displayed the most recent alert to the client. This area was positioned at the top of the screen above the player. It now appears to the right of the select file or player window depending on their journey through the app. It also now features the entire history of alerts via a tabled entry and grows until it is equal in height to the player where it will then turn into a scrollable section. Each entry now includes the time, in the format of hours, minutes, and seconds, at which the alert was first displayed so that the client now has a history of their alerts and actions to reference back on. It also now has the added benefit of being downloadable through the download History Button.
+### Previous Work
+#### Upload Video
+When selecting the "Choose File" button a open file dialog is brought up where the client can search and select a valid MP4 file (only MP4s are valid at this time). Once a file is selected the page will reflect the selction by displaying the file name above the "Choose File" button. At this point the file may be uploaded into the web app by selecting the "Upload \<filename\>" button.
+#### Movie Player
+Upon successful upload of the file the movie player and editor are loaded for the client to begin their work. The player has the video file name printed above the player for clarity and is followed by by the player window where the client may play and seek through the video and to the right of the player window is the alerts window that displays instructions and client actions along with the timestamp of when they were first displayed. Below the player window is the player time information, which is read as "current time time / total video time" where the time is displayed in the format minutes, seconds, and milliseconds. Beside that are the time positions of Mark 1 and Mark 2 within the video. The player buttons include "Play" (or "Pause"), "-10s", "-1s", "+1s", and "+10s". These buttons allow for easy navigation of the video by providing large a play/pause button as well as seek tools to move forward or back in 1 and 10 second increments.
+#### Editor Tools
+The editing tools consists of six buttons. "Add Mark 1" and "Add Mark 2" are for selecting portions of the video that the client would like to take action on. The selected portion of the video is the portion that lies between Mark 1 and Mark 2. Once a portion of the are has been selected by marking its boundaries, the client may select "Play Selection" to only play the selected portion, "Trim To Selection" to remove out everything but the selected portion, and "Delete Selection" to remove out only the selected portion. After all editing is complete the client may choose ""Download \<filename\>" to retrieve a copy of their edited video.
 
 ## R1 Contributions
 - Thai Nguyen
@@ -40,7 +57,7 @@ CSCI 497T with Professor Elglaly
         - The session's alert history may now also be downloaded using the download history button, which downloads a text file with each message on it's own line.
     - Introduction
         - An introduction has now been added that provides helpful instructions to navigate and use the app.
-    - Helped put together UI documentation
+    - Put together UI documentation
 
 ## Installation Info
 ### Dependencies
