@@ -50,6 +50,15 @@ The editing tools consists of six buttons. "Add Mark 1" and "Add Mark 2" are for
     - Navigation
         - Reformatted the navigation to be consistent across all pages to comply with WCAG 2.1 criterion 3.2.3
 - Alex Kefer
+    - Alerts
+        - Designed and organized the alert box to be easily accessible by both visually impaired and non-visually impaired users.
+        - Formatted the input data into a table in order for easy parsability for screen reader users.
+    - Homepage Layout
+        - Re-organized the homepage sections in order for a more seamless user interaction.
+        - Removed styling options that conflicted and are covered by the Ashlar template.
+    -  Keybindings
+        - Fixed broken keybindings by properly installing the correct dependencies and modifying the code to support the changes of the dependencies.
+        - Modified keybindings to be similar to other video or audio editing applications. 
 - Charles Mikkelborg
     - Alerts
         - Added Timestamps to alert messages that display HH:MM:SS that an alert was posted.
