@@ -108,7 +108,7 @@ def download_history():
     messages = session.get('messages', [])
     stringify = ""
     for message in messages:
-        stringify = stringify + message + "\n"
+        stringify = stringify + message[0] + " - " + message[1]  + "\n"
 
     path_filename = app.config['UPLOADED_VIDEOS_DEST'] + '/' + "messageHistory.txt"
     with open(path_filename, "w") as file:
