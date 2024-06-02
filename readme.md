@@ -68,7 +68,7 @@ The editing tools consists of six buttons. "Add Mark 1" and "Add Mark 2" are for
         - An introduction has now been added that provides helpful instructions to navigate and use the app.
     - Put together UI documentation
 
-## R1 Contributions
+## R2 Contributions
 - Thai Nguyen
 - Alex Kefer
 - Charles Mikkelborg
