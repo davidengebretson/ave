@@ -165,6 +165,10 @@ One of the biggest outstanding issues is that of the status of the moviepy packa
 
 That being said, we think it is important that future developement would benefit from having the same dev environment. We have included a requirements.txt that includes package versions that we feel will produce the best working environment. Note that if moviepy where to be updated these requirements would be obsolete.
 
+The following functionality seem to be broken with most environments (it is currently unknown if trim and delete are broken or just the downloaded result):
+- trim to selection
+- delete selection
+- download video (downloaded video is reliably a single frame with the expected audio)
 ### UI
 
 ## UI Documentation
