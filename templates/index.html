@@ -21,6 +21,7 @@ Setting an alert role didn't seem to help; should the alerts go at the top of th
 {% block box1h2 %}Alerts{% endblock %}
 {% block box1content %}
 <div class="history-block">
+    
     {% if session['messages'] %}
     <table class="flashes">
         {% for message in session['messages'][::-1] %}
@@ -33,10 +34,10 @@ Setting an alert role didn't seem to help; should the alerts go at the top of th
     {% else %}
     <p>There are no alerts to display.</p>
     {% endif %}
-    <form method="POST" action="{{ url_for('download_history') }}">
-        <button id="download" class="large-button">Download History</button>
-    </form>
 </div>
+<form method="POST" action="{{ url_for('download_history') }}">
+    <button id="download" class="large-button">Download History</button>
+</form>
 {% endblock %}
 
 {% block intro %}
@@ -71,6 +72,19 @@ Setting an alert role didn't seem to help; should the alerts go at the top of th
 {% block main %}
 <div>
     {% if uploaded_video %}
+
+    <!-- This dialog serves as a loading indicator. It displays an image (a loading GIF) to inform the user 
+        that a process is ongoing and they need to wait. -->
+    <dialog id="loading">
+        <img
+            id="loading-gif"
+            src="{{ url_for('static', filename='images/loading.gif')  }}"
+            alt="Loading Your Video, Please Wait. "
+            open
+        />
+    </dialog>
+
+
     <video id="videoPlayer" preload="metadata" tabindex="-1" disablePictureInPicture>
         <source src="{{ url_for('send_uploaded_file', filename=uploaded_video) }}" type="video/mp4">
     </video>
@@ -129,6 +143,16 @@ Setting an alert role didn't seem to help; should the alerts go at the top of th
                 <li>
                     <button id="addMark2">Add Mark 2</button>
                 </li>
+                <!-- <li>
+                    <form method="POST" action="{{ url_for('add_mark', mark='1', filename=uploaded_video) }}">
+                        <button type="submit" id="addMark1">Add Mark 1</button>
+                    </form>
+                </li>
+                <li>
+                    <form method="POST" action="{{ url_for('add_mark', mark='2', filename=uploaded_video) }}">
+                        <button type="submit" id="addMark2">Add Mark 2</button>
+                    </form>
+                </li> -->
                 <li>
                     <button id="playSelection" disabled>Play Selection</button>
                 </li>

@@ -1,5 +1,5 @@
 import os
-from flask import Flask, flash, render_template, request, send_file, send_from_directory, url_for, session
+from flask import Flask, flash, render_template, request, send_file, send_from_directory, url_for, session, jsonify
 from flask_uploads import UploadSet, configure_uploads
 from werkzeug.utils import redirect, secure_filename
 from markupsafe import escape
@@ -115,3 +115,8 @@ def download_history():
         file.write(stringify)
 
     return send_file(path_filename, as_attachment=True)
+
+@app.route('/addmark1/<mark>', methods=['POST'])
+def add_mark(mark):
+    add_message([strftime("%H:%M:%S"), " Mark 1 " + mark + " added successfully."])
+    return render_template('index.html')
