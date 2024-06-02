@@ -155,7 +155,7 @@ This script exists to clear out the upload folder.
 Run each code line from the script associated with your terminal.
 If your terminal scripting language is not supported you can do the following.
 Create two environment variables, `FLASK_DEBUG` and `FLASK_APP`.
-Set `FLASK_ENV` to `1` and `FLASK_APP` to `main`. 
+Set `FLASK_DEBUG` to `1` and `FLASK_APP` to `main`. 
 Then start the website locally with `flask run`.
 
 ## Current Issues
