@@ -70,6 +70,11 @@ The editing tools consists of six buttons. "Add Mark 1" and "Add Mark 2" are for
 
 ## R2 Contributions
 - Thai Nguyen
+    - Alerts
+        - Added additional backend features to notify which marker is places and what the time associated is.
+        - Moved the download history button to be fixed to the bottom of the alerts section
+    - Feedback
+        - Included a loading dialog for when the trim, delete, and download form is submitted. This gives visual feedback to the user that the backend is currently processing the request.
 - Alex Kefer
     - Alerts
         - Removed useless horizontal slider on alert box.
