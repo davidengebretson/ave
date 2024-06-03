@@ -71,6 +71,12 @@ The editing tools consists of six buttons. "Add Mark 1" and "Add Mark 2" are for
 ## R2 Contributions
 - Thai Nguyen
 - Alex Kefer
+    - Alerts
+        - Removed useless horizontal slider on alert box.
+        - Added row and column scopes to the Alertbox
+        - Styled the text and buttons in the Alertbox to not be touching the edges of the box
+    - Introduction
+        - Styled text in Introduction to not interfere with border box
 - Charles Mikkelborg
     - Alerts
         - Fixed download to write new parsed table data, instead of original string data
