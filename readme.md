@@ -83,6 +83,8 @@ The editing tools consists of six buttons. "Add Mark 1" and "Add Mark 2" are for
     - Introduction
         - Styled text in Introduction to not interfere with border box
 - Charles Mikkelborg
+    - Debug
+        - Debug mode within the start script was not working as intended. It was using an depracted feature from several years ago. This has been updated to use the current syntax.
     - Alerts
         - Fixed download to write new parsed table data, instead of original string data
     - Requirements
