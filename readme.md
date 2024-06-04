@@ -182,7 +182,6 @@ The following functionality seem to be broken with most environments (it is curr
 - trim to selection
 - delete selection
 - download video (downloaded video is reliably a single frame with the expected audio)
-### UI
 
 ## UI Documentation
 ### Landing
